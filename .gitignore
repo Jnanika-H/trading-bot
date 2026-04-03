@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.pyc
+
+# Virtual environment
+.venv/
+
+# Environment variables (IMPORTANT)
+.env
+
+# Logs
+logs/
+backend/logs/
+
+# Node
+node_modules/
+
+# Build files
+dist/
