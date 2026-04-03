@@ -45,50 +45,6 @@ Built with:
 
 ---
 
-## 🏗 Project Structure
-trading-bot/
-├── backend/
-│   ├── app/
-│   │   ├── __init__.py
-│   │   ├── client.py
-│   │   ├── logging_config.py
-│   │   ├── main.py
-│   │   ├── orders.py
-│   │   └── validators.py
-│   │
-│   ├── logs/
-│   │   └── app.log
-│   │
-│   ├── .env.example
-│   ├── cli.py
-│   ├── requirements.txt
-│   └── run.py
-│
-├── frontend/
-│   ├── src/
-│   │   ├── components/
-│   │   │   ├── OrderForm.jsx
-│   │   │   ├── OrderHistory.jsx
-│   │   │   ├── OrderResult.jsx
-│   │   │   ├── StatusBar.jsx
-│   │   │   └── Toast.jsx
-│   │   │
-│   │   ├── api.js
-│   │   ├── App.jsx
-│   │   ├── index.css
-│   │   └── main.jsx
-│   │
-│   ├── index.html
-│   ├── package.json
-│   ├── package-lock.json
-│   ├── postcss.config.js
-│   ├── tailwind.config.js
-│   └── vite.config.js
-│
-└── README.md
-
----
-
 ## 🔑 Getting Binance Testnet API Keys
  
 1. Visit **[https://testnet.binancefuture.com](https://testnet.binancefuture.com)**
