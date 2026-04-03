@@ -24,6 +24,7 @@ from app.validators import (
 logger = logging.getLogger(__name__)
 router = APIRouter()
 last_order = None
+order_counter = 1 
 
 
 def _build_order_response(raw: Dict[str, Any]) -> PlaceOrderResponse:
@@ -107,9 +108,13 @@ async def place_order(payload: PlaceOrderRequest) -> PlaceOrderResponse:
 
     except Exception as e:
         logger.error("Order failed: %s", e, exc_info=True)
-        global last_order
         import random
-        
+        global last_order, order_counter
+        # Generate incremental order ID
+        current_id = order_counter
+        order_counter += 1
+
+        # Random fill logic
         if payload.order_type.value == "MARKET":
             # Random fill between 80% to 100%
             fill_ratio = random.uniform(0.8, 1.0)
@@ -120,7 +125,7 @@ async def place_order(payload: PlaceOrderRequest) -> PlaceOrderResponse:
         executed_qty = str(round(float(payload.quantity) * fill_ratio, 6))
 
         last_order = {
-            "orderId": 1,
+            "orderId": current_id,
             "symbol": payload.symbol,
             "status": "DEMO",
             "side": payload.side.value,
